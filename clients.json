@@ -1,10 +1,10 @@
 {
   "clients": [
     {
-      "Age": 31,
-      "Country": "New York",
       "Firstname": "Savage",
-      "Lastname": "John"
+      "Lastname": "John",
+      "Age": 31,
+      "Country": "New York"
     },
     {
       "Firstname": "Amout",
