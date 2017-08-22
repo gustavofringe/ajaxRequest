@@ -1,4 +1,7 @@
-
+/**
+ * recover json
+ * 
+ */
 $.getJSON('clients.json', function (data) 
 {
     $('#select').change(function(){
