@@ -1,4 +1,55 @@
-//$('.table').append("<thead><tr><th>First Name</th><th>Last Name</th><th>Age</th><th>Country</th></tr></thead>");
+
+$.getJSON('clients.json', function (data) 
+{
+    $('#select').change(function(){
+        $('#display').html('Chargement...');
+            people = sortByKey(data.clients, $('#select').val());
+            console.table(people)
+            $('#display').empty()
+            for (var i in data.clients)
+            {
+                $('#display').append("<tr><th class='first'>" + data.clients[i].Firstname +
+                    "</th><td class='last'>" + data.clients[i].Lastname + "</td><td class='age'>" + data.clients[i].Age +
+                    "</td><td class='country'>" + data.clients[i].Country + "</td></tr>"
+                );
+            }
+    });
+    for (var i in data.clients)
+        {
+            $('#display').append("<tr><th class='first'>" + data.clients[i].Firstname +
+                "</th><td class='last'>" + data.clients[i].Lastname + "</td><td class='age'>" + data.clients[i].Age +
+                "</td><td class='country'>" + data.clients[i].Country + "</td></tr>"
+            );
+        }
+});
+
+/**
+ * sort function
+ * @param {*} array 
+ * @param {*} key 
+ */
+function sortByKey(array, key)
+{
+    return array.sort(function (a, b)
+    {
+        var x = a[key];
+        var y = b[key];
+        if (x < y)
+        {
+            return -1
+        }
+        if (x > y)
+        {
+            return 1
+        }
+    });
+}
+
+/**
+ * 
+ * ajax request
+ */
+/*
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function ()
 {
@@ -30,19 +81,5 @@ xhttp.onreadystatechange = function ()
 };
 xhttp.open("GET", "clients.json", true);
 xhttp.send();
-function sortByKey(array, key)
-{
-    return array.sort(function (a, b)
-    {
-        var x = a[key];
-        var y = b[key];
-        if (x < y)
-        {
-            return -1
-        }
-        if (x > y)
-        {
-            return 1
-        }
-    });
-}
+*/
+
