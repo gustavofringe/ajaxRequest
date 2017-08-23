@@ -1,55 +1,50 @@
+$.getJSON('clients.json', function (data) {
+    var $display = new display();
+
+    $('#select').change(function () {
+        $('#display').html('Chargement...');
+        people = sortByKey(data.clients, $('#select').val());
+        console.table(people);
+        $display.form(data);
+    });
+    $display.form(data);
+});
 /**
  * recover json
- * 
+ *
  */
-$.getJSON('clients.json', function (data) 
-{
-    $('#select').change(function(){
-        $('#display').html('Chargement...');
-            people = sortByKey(data.clients, $('#select').val());
-            console.table(people)
-            $('#display').empty()
-            for (var i in data.clients)
-            {
-                $('#display').append("<tr><th class='first'>" + data.clients[i].Firstname +
-                    "</th><td class='last'>" + data.clients[i].Lastname + "</td><td class='age'>" + data.clients[i].Age +
-                    "</td><td class='country'>" + data.clients[i].Country + "</td></tr>"
-                );
-            }
-    });
-    for (var i in data.clients)
-        {
-            $('#display').append("<tr><th class='first'>" + data.clients[i].Firstname +
-                "</th><td class='last'>" + data.clients[i].Lastname + "</td><td class='age'>" + data.clients[i].Age +
-                "</td><td class='country'>" + data.clients[i].Country + "</td></tr>"
+function display(){
+    this.form = function(x){
+        $('#display').empty();
+        for (var i in x.clients) {
+            $('#display').append("<tr><th class='first'>" + x.clients[i].Firstname +
+                "</th><td class='last'>" + x.clients[i].Lastname + "</td><td class='age'>" + x.clients[i].Age +
+                "</td><td class='country'>" + x.clients[i].Country + "</td></tr>"
             );
         }
-});
+    }
+}
 
 /**
  * sort function
- * @param {*} array 
- * @param {*} key 
+ * @param {*} array
+ * @param {*} key
  */
-function sortByKey(array, key)
-{
-    return array.sort(function (a, b)
-    {
+function sortByKey(array, key) {
+    return array.sort(function (a, b) {
         var x = a[key];
         var y = b[key];
-        if (x < y)
-        {
+        if (x < y) {
             return -1
         }
-        if (x > y)
-        {
+        if (x > y) {
             return 1
         }
     });
 }
 
 /**
- * 
+ *
  * ajax request
  */
 /*
@@ -86,3 +81,14 @@ xhttp.open("GET", "clients.json", true);
 xhttp.send();
 */
 
+$("#submit").click(function(){
+    var first = $("#first").val().toUpperCase();
+    var last = $("#last").val().toUpperCase();
+    var age = $("#age").val();
+    var country = $("#country").val().toUpperCase();
+    $.ajax({
+        url : 'insert.php',
+        type : 'POST',
+        data:"first="+first+"&last="+last+"&age="+age+"&country="+country,
+       });
+});

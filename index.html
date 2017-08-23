@@ -1,57 +1,96 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Sort table</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Sort table</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="icon" href="favicon.ico" />
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
-        <header class="container">
-            <div class="form-group">
-                <h1>Sort Table</h1>
-                <label for="select">Choice sort</label>
-                <select class="form-control" id="select">
-                    <option>Firstname</option>
-                    <option>Lastname</option>
-                    <option>Age</option>
-                    <option>Country</option>
-                </select>
-            </div>
-        </header>
-    <main class="container">
-        <div id="loading"></div>
-        <!-- /#demo -->
-<table class="table table-inverse">
-    <thead><tr><th>First Name</th><th>Last Name</th><th>Age</th><th>Country</th></tr></thead>
-    <tbody id="display"></tbody>
-</table>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<header class="container">
+    <div class="form-group">
+        <h1>Sort Table</h1>
+        <label for="select">Choice sort</label>
+        <select class="form-control" id="select">
+            <option>Firstname</option>
+            <option>Lastname</option>
+            <option>Age</option>
+            <option>Country</option>
+        </select>
+    </div>
+</header>
+<main class="container">
+    <div id="loading"></div>
+    <!-- /#demo -->
+    <table class="table table-inverse">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Country</th>
+        </tr>
+        </thead>
+        <tbody id="display"></tbody>
+    </table>
+    <!-- /.table -->
+    <h2>Create player</h2>
+    <div class="error"></div>
+    <!-- /.error -->
+    <form method="POST">
+        <div class="form-group">
+            <label for="first">Firstname</label>
+            <input type="text" class="form-control" id="first" placeholder="Firstname" name="first">
+        </div>
+        <div class="form-group">
+            <label for="last">Lastname</label>
+            <input type="text" class="form-control" id="last" placeholder="Lastname" name="last">
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" class="form-control" id="age" placeholder="Age" name="age">
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" class="form-control" id="country" placeholder="Country" name="country">
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit">Submit</button>
 
-<!-- /.table -->
-    </main>
+    </form>
+    <div id="commentaires"></div>
+    <!-- /#commentaires -->
+</main>
 
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
-    </body>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    (function (b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function () {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = 'https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
 </html>

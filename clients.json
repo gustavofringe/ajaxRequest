@@ -1,34 +1,34 @@
 {
   "clients": [
     {
-      "Firstname": "Savage",
-      "Lastname": "John",
-      "Age": 31,
-      "Country": "New York"
+      "Firstname": "SAVAGE",
+      "Lastname": "JOHN",
+      "Age": "31",
+      "Country": "NEW YORK"
     },
     {
-      "Firstname": "Amout",
-      "Lastname": "Xavier",
-      "Age": 32,
-      "Country": "Texas"
+      "Firstname": "AMOUNT",
+      "Lastname": "XAVIER",
+      "Age": "32",
+      "Country": "TEXAS"
     },
     {
-      "Firstname": "Belouga",
-      "Lastname": "Thomas",
-      "Age": 50,
-      "Country": "Chicago"
+      "Firstname": "BELOUGA",
+      "Lastname": "THOMAS",
+      "Age": "50",
+      "Country": "CHICAGO"
     },
     {
-      "Firstname": "Great",
-      "Lastname": "Bob",
-      "Age": 64,
-      "Country": "Oregon"
+      "Firstname": "SANCHEZ",
+      "Lastname": "CLEMENT",
+      "Age": "31",
+      "Country": "FRANCE"
     },
     {
-      "Firstname": "Koukou",
-      "Lastname": "Steve",
-      "Age": 43,
-      "Country": "Miami"
+      "Firstname": "AGUIRE",
+      "Lastname": "THOMAS",
+      "Age": "65",
+      "Country": "BOSTON"
     }
   ]
 }
